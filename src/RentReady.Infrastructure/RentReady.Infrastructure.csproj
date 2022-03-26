@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="10.0.1" />
+		<PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="5.2.9" />
+		<PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client" Version="0.6.1" />
+		<PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client.Dynamics" Version="0.6.1" />
+		<PackageReference Include="System.Net.Http" Version="4.3.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\RentReady.Application\RentReady.Application.csproj" />
+		<ProjectReference Include="..\RentReady.Domain\RentReady.Domain.csproj" />
+	</ItemGroup>
+
+</Project>
