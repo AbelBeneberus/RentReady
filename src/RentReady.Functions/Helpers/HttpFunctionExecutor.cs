@@ -26,9 +26,10 @@ namespace RentReady.Functions.Helpers
 						x.ErrorCode
 					})
 				};
-
+				
 				return new BadRequestObjectResult(result);
 			}
+			 
 		}
 	}
 }

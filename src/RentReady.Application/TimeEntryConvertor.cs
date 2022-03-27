@@ -6,25 +6,19 @@ namespace RentReady.Application
 	{
 		public static Domain.TimeEntry ConvertToDamainTimeEntry(TimeEntryDto timeEntry)
 		{
-			DateTime startOnDateTime = GetDateTimeFromString(timeEntry.StartOn);
-			DateTime endOnDateTime = GetDateTimeFromString(timeEntry.EndOn);
-
-			return new Domain.TimeEntry() {
-				StartOn = startOnDateTime,
-				EndOn = endOnDateTime,
-				Duration = GetDurationInMinute(startOnDateTime, endOnDateTime)
+			return new Domain.TimeEntry()
+			{
+				StartOn = timeEntry.StartOn.Date + new TimeSpan(2,0,0),
+				EndOn = timeEntry.EndOn.Date + new TimeSpan(11,0,0),
+				Duration = GetDurationInMinute(timeEntry.StartOn, timeEntry.EndOn)
 			};
-				 
+
 		}
 
-		private static DateTime GetDateTimeFromString(string date)
-		{
-			return DateTime.TryParse(date, out var dateTime)? dateTime : DateTime.MinValue; 
-		}
-		private static double GetDurationInMinute(DateTime startDate, DateTime endDate)
+		private static int GetDurationInMinute(DateTime startDate, DateTime endDate)
 		{
 			TimeSpan duration = endDate - startDate;
-			return duration.TotalMinutes;
+			return Convert.ToInt32(duration.TotalSeconds);
 		}
 	}
 }

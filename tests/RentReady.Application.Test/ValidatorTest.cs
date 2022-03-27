@@ -9,7 +9,6 @@ namespace RentReady.Application.Test
 	{
 
 		private CreateTimeEntryCommandValidator validator;
-		public const string ValidationMessage = "Invalid date/time";
 
 		public ValidatorTest()
 		{
@@ -55,7 +54,7 @@ namespace RentReady.Application.Test
 
 			result.Should().NotBeNull();
 			result.IsValid.Should().BeFalse();
-			result.Errors.Count.Should().Be(2);
+			result.Errors.Count.Should().Be(3);
 		}
 
 		[Fact]
@@ -76,9 +75,9 @@ namespace RentReady.Application.Test
 
 			result.Should().NotBeNull();
 			result.IsValid.Should().BeFalse();
-			result.Errors.Count.Should().Be(1);
+			result.Errors.Count.Should().Be(2);
 		}
-		
+
 		[Fact]
 		public void GivenInValidEndOnDateAndValidStartOnDate_WhenValidating_ShouldProvideValiMessage()
 		{
@@ -97,8 +96,33 @@ namespace RentReady.Application.Test
 
 			result.Should().NotBeNull();
 			result.IsValid.Should().BeFalse();
+			result.Errors.Count.Should().Be(2);
+			result.Errors[0].ErrorMessage.Should()
+				.BeSameAs(validator.InvalidEndOnDateMessage);
+		}
+
+		[Fact]
+		public void GivenAValidStartDateGreaterThanEndDate_WhenValidating_ShouldBeInvalid()
+		{
+			// arrange 
+
+			CreateTimeEntryCommand createTimeEntryCommand = new CreateTimeEntryCommand()
+			{
+				EndOn = DateTime.Now.AddDays(-1).ToString(),
+				StartOn = DateTime.Now.ToString()
+			};
+
+			// act
+
+			var result = validator.Validate(createTimeEntryCommand);
+
+			// assert
+
+			result.Should().NotBeNull();
+			result.IsValid.Should().BeFalse();
 			result.Errors.Count.Should().Be(1);
-		    result.Errors[0].ErrorMessage.Should().BeSameAs(ValidationMessage);
+			result.Errors[0].ErrorMessage.Should()
+				.BeSameAs(validator.InvalidDateDiffMessage);
 		}
 	}
 }

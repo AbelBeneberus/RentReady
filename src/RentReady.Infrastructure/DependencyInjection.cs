@@ -9,7 +9,7 @@ namespace RentReady.Infrastructure
 		public static IServiceCollection AddInfrastructure(this IServiceCollection services)
 		{
 			services.AddScoped<ITimeEntryRepository, DataVerseRepository>(); 
-			services.AddScoped<IClientBuilder, ClientBuilder>(); 
+			services.AddScoped<IClientServiceProvider, ClientServiceProvider>(); 
 
 			return services;
 		}
