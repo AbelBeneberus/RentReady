@@ -1,0 +1,12 @@
+{
+	"IsEncrypted": false,
+	"Values": {
+		"AzureWebJobsStorage": "UseDevelopmentStorage=true",
+		"FUNCTIONS_WORKER_RUNTIME": "dotnet"
+	},
+
+	"DataVerseConnection": {
+	 
+		"connectionString": "AuthType=OAuth; Username=user1; Password=password; AppId=304b2042-f0ad-4e35-890d-1d4583af0c06;Url=https://org2dc94d15.crm4.dynamics.com; RedirectUri=app://58145B91-0C36-4500-8554-080854F2AC97;"
+	}
+}
