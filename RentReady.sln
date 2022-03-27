@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentReady.Domain", "src\Ren
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentReady.Infrastructure", "src\RentReady.Infrastructure\RentReady.Infrastructure.csproj", "{85958337-3495-4AB4-8CA6-3381BE0809D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentReady.Function.Test", "tests\RentReady.Function.Test\RentReady.Function.Test.csproj", "{F9363A0E-AD67-4B6A-B350-4E832E6A1424}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,10 +43,6 @@ Global
 		{85958337-3495-4AB4-8CA6-3381BE0809D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85958337-3495-4AB4-8CA6-3381BE0809D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85958337-3495-4AB4-8CA6-3381BE0809D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9363A0E-AD67-4B6A-B350-4E832E6A1424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9363A0E-AD67-4B6A-B350-4E832E6A1424}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9363A0E-AD67-4B6A-B350-4E832E6A1424}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9363A0E-AD67-4B6A-B350-4E832E6A1424}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,7 +53,6 @@ Global
 		{7A458E4D-2B43-4056-B122-C772061C9D89} = {DF2D9D9D-4E2A-4AB1-AF65-C50BB306BB1A}
 		{EF410D31-61EC-4FD4-9E42-F2C25D399FAE} = {1C5F96A3-601F-49AB-9372-F5AF4618D502}
 		{85958337-3495-4AB4-8CA6-3381BE0809D7} = {1C5F96A3-601F-49AB-9372-F5AF4618D502}
-		{F9363A0E-AD67-4B6A-B350-4E832E6A1424} = {DF2D9D9D-4E2A-4AB1-AF65-C50BB306BB1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37E1E16A-2485-4E60-82BE-A799C684EF69}
