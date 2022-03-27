@@ -21,7 +21,7 @@ namespace RentReady.Functions
 			var serviceCollection = builder.Services;
 			IConfiguration config = new ConfigurationBuilder()
 				.SetBasePath(Directory.GetCurrentDirectory())
-				.AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
+				.AddJsonFile("func.settings.json", optional: true, reloadOnChange: true)
 				.AddEnvironmentVariables()
 				.Build();
 

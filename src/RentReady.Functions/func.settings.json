@@ -1,0 +1,16 @@
+{
+	"IsEncrypted": false,
+	"Values": {
+		"AzureWebJobsStorage": "UseDevelopmentStorage=true",
+		"FUNCTIONS_WORKER_RUNTIME": "dotnet"
+	},
+
+	"DataVerseConnection": {
+		"userName": "abeldemissie@abeltrial.onmicrosoft.com",
+		"password": "2d35b291-4ab4-4d7a-ac5b-13b7bfe6db60",
+		"clientId": "304b2042-f0ad-4e35-890d-1d4583af0c06",
+		"ApplicationUrl": "https://org2dc94d15.crm4.dynamics.com",
+		"redirectUrl": "app://58145B91-0C36-4500-8554-080854F2AC97",
+		"connectionString": "AuthType=OAuth; Username=abeldemissie@abeltrial.onmicrosoft.com; Password=2d35b291-4ab4-4d7a-ac5b-13b7bfe6db60; AppId=304b2042-f0ad-4e35-890d-1d4583af0c06;Url=https://org2dc94d15.crm4.dynamics.com; RedirectUri=app://58145B91-0C36-4500-8554-080854F2AC97;"
+	}
+}
