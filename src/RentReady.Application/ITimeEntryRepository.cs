@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RentReady.Domain;
 
 namespace RentReady.Application
 {
 	public interface ITimeEntryRepository
 	{
-		Task CreateTimeEntryRecordAsync(RentReady.Domain.TimeEntry timeEntry);
+		Task<DateTime> CreateTimeEntryRecordAsync(TimeEntry timeEntry);
+		Task<IEnumerable<TimeEntry>> GetTimeEntryByDateRangeAsync(DateTime fromDate, DateTime toDate);
 	}
 }

@@ -2,7 +2,7 @@
 {
 	public class TimeEntryDto
 	{
-		public string StartOn { get; set; } = string.Empty;
-		public string EndOn { get; set; } = string.Empty; 
+		public DateTime StartOn { get; set; }
+		public DateTime EndOn { get; set; }
 	}
 }

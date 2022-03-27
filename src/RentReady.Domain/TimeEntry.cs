@@ -2,9 +2,10 @@
 {
 	public class TimeEntry : BaseEntity
 	{
+		public Guid TimeEntryId { get; set; }
 		public DateTime StartOn { get; set; }
 		public DateTime EndOn { get; set; }
-		public double Duration { get; set; }
+		public int Duration { get; set; }
 	}
 
 }
