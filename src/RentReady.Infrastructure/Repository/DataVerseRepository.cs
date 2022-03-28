@@ -32,7 +32,7 @@ namespace RentReady.Infrastructure
 
 		public async Task<DateTime> CreateTimeEntryRecordAsync(TimeEntry timeEntry)
 		{
-			if (_clientServiceProvider.IsServiceReady())
+			if (!_clientServiceProvider.IsServiceReady())
 			{
 				throw new ServiceIsNotReadyException(service.LastException);
 			}
@@ -62,7 +62,7 @@ namespace RentReady.Infrastructure
 
 		public async Task<IEnumerable<TimeEntry>> GetTimeEntryByDateRangeAsync(DateTime fromDate, DateTime toDate)
 		{
-			if (_clientServiceProvider.IsServiceReady())
+			if (!_clientServiceProvider.IsServiceReady())
 			{
 				throw new ServiceIsNotReadyException(service.LastException);
 			}
