@@ -9,6 +9,7 @@ using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 using Microsoft.OpenApi.Models;
 using RentReady.Functions.SwaggerExample;
 using RentReady.Application.Exceptions;
+using Microsoft.AspNetCore.Http;
 
 namespace RentReady.Functions.Functions
 {
@@ -36,16 +37,21 @@ namespace RentReady.Functions.Functions
 				return await _httpFunctionExecutor.ExecuteAsync(async () =>
 							{
 								var result = await _mediator.Send(command);
-								return new OkObjectResult(result);
+
+								return new OkObjectResult(new { Message = "Time Entry Record created for the this days succesfuly.", Dates = result.Dates });
 							});
 			}
 			catch (RemoteServiceException ex)
 			{
-				return new UnprocessableEntityObjectResult(ex.Message);
+				var result = new ObjectResult(ex.Message);
+				result.StatusCode = StatusCodes.Status503ServiceUnavailable;
+				return result;
 			}
 			catch (System.Exception ex)
 			{
-				return new ObjectResult(ex.Message);
+				var result = new ObjectResult(ex.Message);
+				result.StatusCode = StatusCodes.Status500InternalServerError;
+				return result;
 			}
 		}
 
