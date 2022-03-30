@@ -32,27 +32,14 @@ namespace RentReady.Functions.Functions
 			[HttpTrigger(AuthorizationLevel.Anonymous, "post", "get", Route = null)] CreateTimeEntryCommand command,
 			ILogger log)
 		{
-			try
-			{
+			 
 				return await _httpFunctionExecutor.ExecuteAsync(async () =>
 							{
 								var result = await _mediator.Send(command);
 
 								return new OkObjectResult(new { Message = "Time Entry Record created for the this days succesfuly.", Dates = result.Dates });
 							});
-			}
-			catch (RemoteServiceException ex)
-			{
-				var result = new ObjectResult(ex.Message);
-				result.StatusCode = StatusCodes.Status503ServiceUnavailable;
-				return result;
-			}
-			catch (System.Exception ex)
-			{
-				var result = new ObjectResult(ex.Message);
-				result.StatusCode = StatusCodes.Status500InternalServerError;
-				return result;
-			}
+			 
 		}
 
 	}
